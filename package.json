@@ -1,0 +1,19 @@
+{
+  "name": "express-socket.io-nginx",
+  "description": "Proof of concept of socket.io server working with Express through nginx",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "DEBUG=* coffee main.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chesstrian/express-socket.io-nginx"
+  },
+  "dependencies": {
+    "colors": "^1.0.3",
+    "debug": "^2.1.1",
+    "express": "^4.11.0",
+    "socket.io": "^1.2.1"
+  }
+}
