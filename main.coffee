@@ -10,14 +10,10 @@ port = app.get 'port'
 server = app.listen port, ->
   debug 'Express server listening on port %s'.magenta, String(server.address().port).green
 
-sockets =  socket_io transports: ['websocket', 'flashsocket','htmlfile','xhr-polling','jsonp-polling']
-
-io = sockets.listen server,
-  resource: '/socket.io/'
-  'sync disconnect on unload': true
+io = socket_io.listen server
 
 io.sockets.on 'connection', (socket) ->
   debug 'Connected'.blue
 
-io.sockets.on 'disconnection', (socket) ->
-  debug 'Disconnected'.red
+  socket.on 'disconnection', (socket) ->
+    debug 'Disconnected'.red
